@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  ai-service:
+    build: .
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - .:/app
+    # The container will run app.py on port 5000
